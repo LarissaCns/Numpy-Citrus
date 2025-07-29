@@ -3,9 +3,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-URL = "https://raw.githubusercontent.com/allanspadini/numpy/dados/citrus.csv"
-
-
 def carregar_dados(url):
     """Carrega os dados do CSV remoto e retorna como array NumPy."""
     return np.loadtxt(url, delimiter=",", skiprows=1, usecols=np.arange(1, 6, 1))
@@ -46,7 +43,7 @@ def plotar_relacao(x1, y1, x2, y2):
 
 def main():
     """Função principal para carregar dados, calcular coeficientes e plotar o gráfico."""
-    dados = carregar_dados(URL)
+    dados = carregar_dados("citrus.csv")
     laranja, toranja = separar_frutas(dados)
 
     laranja_diametro = laranja[:5000, 0]
